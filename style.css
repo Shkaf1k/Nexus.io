@@ -1,81 +1,100 @@
+*{
+    box-sizing:border-box;
+}
+
+
 body{
 
-margin:0;
+    margin:0;
+    min-height:100vh;
 
-background:#050505;
+    background:
+    radial-gradient(circle at top,#3a0010,#050505 50%);
 
-color:white;
-
-font-family:Arial;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
 
 }
 
 
+/* HEADER */
 
 header{
 
-display:flex;
+    height:90px;
 
-align-items:center;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-justify-content:space-between;
-
-padding:25px;
-
+    padding:25px 40px;
 
 }
-
 
 
 .logo{
 
-font-size:32px;
+    font-size:32px;
+    font-weight:bold;
+    color:#ff1744;
 
-color:#ff1744;
-
-font-weight:bold;
-
-}
-
-
-
-.search{
-
-background:#111;
-
-border:1px solid #333;
-
-border-radius:20px;
-
-padding:15px;
-
-color:white;
+    text-shadow:
+    0 0 20px #ff1744;
 
 }
 
 
+
+/* LINKS */
 
 a{
 
-color:white;
-
-margin:10px;
-
-text-decoration:none;
+    color:white;
+    text-decoration:none;
+    margin:15px;
 
 }
 
+
+
+a:hover{
+
+    color:#ff1744;
+
+}
+
+
+
+/* SEARCH */
+
+.search{
+
+    width:300px;
+
+    padding:15px;
+
+    border-radius:30px;
+
+    background:#111;
+
+    border:1px solid #444;
+
+    color:white;
+
+}
+
+
+
+/* GAME CARDS */
 
 
 .games{
 
 display:grid;
-
 grid-template-columns:repeat(3,1fr);
+gap:25px;
 
-gap:20px;
-
-padding:30px;
+padding:40px;
 
 }
 
@@ -83,36 +102,114 @@ padding:30px;
 
 .card{
 
-height:200px;
-
-padding:25px;
-
-
 background:
+rgba(255,255,255,0.08);
 
-rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.15);
+
+padding:30px;
 
 
-border-radius:20px;
-
-
-backdrop-filter:blur(15px);
-
-
-border:1px solid #333;
+box-shadow:
+0 0 30px rgba(255,23,68,.15);
 
 
 }
 
 
 
-.card:hover{
+/* AUTH */
+
+.form{
+
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+
+width:420px;
+
+padding:40px;
+
+
+background:
+rgba(255,255,255,.08);
+
+
+backdrop-filter:blur(25px);
+
+
+border-radius:30px;
+
+
+border:1px solid rgba(255,255,255,.2);
+
 
 box-shadow:
-0 0 30px #ff1744;
+
+0 0 50px rgba(255,23,68,.35);
 
 
-transform:translateY(-5px);
+}
+
+
+
+.form h1{
+
+text-align:center;
+
+color:#ff1744;
+
+font-size:40px;
+
+}
+
+
+
+.form h2{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+
+
+.form input{
+
+
+width:100%;
+
+
+padding:15px;
+
+
+margin:10px 0;
+
+
+border-radius:15px;
+
+
+border:1px solid #444;
+
+
+background:#080808;
+
+
+color:white;
+
+
+font-size:16px;
 
 
 }
@@ -121,14 +218,46 @@ transform:translateY(-5px);
 
 button{
 
-background:#ff1744;
 
-color:white;
+width:100%;
+
+margin-top:20px;
+
+
+padding:15px;
+
 
 border:0;
 
-padding:12px 25px;
 
 border-radius:20px;
+
+
+background:#ff1744;
+
+
+color:white;
+
+
+font-size:17px;
+
+
+cursor:pointer;
+
+
+box-shadow:
+
+0 0 20px #ff1744;
+
+
+}
+
+
+
+button:hover{
+
+
+transform:scale(1.05);
+
 
 }
