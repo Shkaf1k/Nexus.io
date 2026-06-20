@@ -1,266 +1,148 @@
 *{
-    box-sizing:border-box;
+box-sizing:border-box;
 }
 
 
 body{
 
-    margin:0;
-    min-height:100vh;
+margin:0;
+min-height:100vh;
 
-    background:
-    radial-gradient(circle at top,#3a0010,#050505 50%);
+background:
+radial-gradient(circle at top,#400015,#050505 50%);
 
-    color:white;
-    font-family:Arial, Helvetica, sans-serif;
+color:white;
+
+font-family:Arial;
 
 }
 
 
-/* HEADER */
 
 header{
 
-    height:90px;
+height:100px;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+display:flex;
 
-    padding:25px 40px;
+align-items:center;
+
+justify-content:space-between;
+
+padding:25px 40px;
 
 }
+
 
 
 .logo{
 
-    font-size:32px;
-    font-weight:bold;
-    color:#ff1744;
+font-size:32px;
 
-    text-shadow:
-    0 0 20px #ff1744;
+font-weight:bold;
 
-}
+color:#ff1744;
 
-
-
-/* LINKS */
-
-a{
-
-    color:white;
-    text-decoration:none;
-    margin:15px;
+text-shadow:
+0 0 25px #ff1744;
 
 }
 
 
-
-a:hover{
-
-    color:#ff1744;
-
-}
-
-
-
-/* SEARCH */
 
 .search{
 
-    width:300px;
+width:270px;
 
-    padding:15px;
+padding:14px;
 
-    border-radius:30px;
+border-radius:25px;
 
-    background:#111;
+background:#111;
 
-    border:1px solid #444;
+border:1px solid #444;
 
-    color:white;
+color:white;
 
 }
 
 
-
-/* GAME CARDS */
 
 
 .games{
 
 display:grid;
+
 grid-template-columns:repeat(3,1fr);
+
 gap:25px;
 
-padding:40px;
+padding:35px;
 
 }
+
 
 
 
 .card{
 
-background:
-rgba(255,255,255,0.08);
-
-backdrop-filter:blur(20px);
-
-border-radius:25px;
-
-border:1px solid rgba(255,255,255,.15);
-
 padding:30px;
 
-
-box-shadow:
-0 0 30px rgba(255,23,68,.15);
-
-
-}
-
-
-
-/* AUTH */
-
-.form{
-
-
-position:absolute;
-
-top:50%;
-left:50%;
-
-transform:
-translate(-50%,-50%);
-
-
-width:420px;
-
-padding:40px;
+height:210px;
 
 
 background:
+
 rgba(255,255,255,.08);
 
 
-backdrop-filter:blur(25px);
+backdrop-filter:blur(20px);
 
 
-border-radius:30px;
+border-radius:25px;
 
 
 border:1px solid rgba(255,255,255,.2);
 
 
-box-shadow:
-
-0 0 50px rgba(255,23,68,.35);
-
-
 }
 
 
 
-.form h1{
-
-text-align:center;
-
-color:#ff1744;
-
-font-size:40px;
-
-}
-
-
-
-.form h2{
-
-text-align:center;
-
-margin-bottom:30px;
-
-}
-
-
-
-.form input{
-
-
-width:100%;
-
-
-padding:15px;
-
-
-margin:10px 0;
-
-
-border-radius:15px;
-
-
-border:1px solid #444;
-
-
-background:#080808;
-
-
-color:white;
-
-
-font-size:16px;
-
-
-}
-
-
-
-button{
-
+.card button{
 
 width:100%;
 
 margin-top:20px;
 
-
-padding:15px;
-
-
-border:0;
+}
 
 
-border-radius:20px;
 
+
+button{
 
 background:#ff1744;
 
-
 color:white;
 
+border:0;
 
-font-size:17px;
+padding:14px;
 
+border-radius:20px;
 
 cursor:pointer;
 
-
 box-shadow:
-
 0 0 20px #ff1744;
-
 
 }
 
 
 
-button:hover{
 
-
-transform:scale(1.05);
-
-
-}/* PROFILE MENU */
+/* PROFILE */
 
 
 .profile-menu{
@@ -296,8 +178,6 @@ justify-content:center;
 
 font-size:22px;
 
-font-weight:bold;
-
 
 box-shadow:
 0 0 25px #ff1744;
@@ -310,7 +190,7 @@ box-shadow:
 
 position:relative;
 
-cursor:pointer;
+padding-bottom:25px;
 
 }
 
@@ -328,11 +208,7 @@ top:45px;
 width:170px;
 
 
-display:none;
-
-
 background:
-
 rgba(20,20,20,.9);
 
 
@@ -348,7 +224,13 @@ padding:10px;
 border:1px solid #333;
 
 
-z-index:10;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.2s;
+
 
 }
 
@@ -356,15 +238,13 @@ z-index:10;
 
 .dropdown a{
 
-
 display:block;
 
+color:white;
+
+text-decoration:none;
 
 padding:12px;
-
-
-margin:0;
-
 
 }
 
@@ -382,12 +262,103 @@ border-radius:10px;
 
 .user:hover .dropdown{
 
-display:block;
+opacity:1;
 
-}.user{
+visibility:visible;
 
-position:relative;
+}
 
-padding-bottom:20px;
+
+
+/* FORM */
+
+
+.form{
+
+position:absolute;
+
+top:50%;
+
+left:50%;
+
+
+transform:
+translate(-50%,-50%);
+
+
+width:420px;
+
+padding:40px;
+
+
+
+background:
+
+rgba(255,255,255,.08);
+
+
+
+backdrop-filter:blur(25px);
+
+
+
+border-radius:30px;
+
+
+
+box-shadow:
+0 0 50px #ff1744;
+
+
+}
+
+
+
+.form h1{
+
+color:#ff1744;
+
+text-align:center;
+
+}
+
+
+
+.form input{
+
+
+width:100%;
+
+padding:15px;
+
+margin:10px 0;
+
+
+border-radius:15px;
+
+
+background:#090909;
+
+
+border:1px solid #444;
+
+
+color:white;
+
+
+}
+
+
+.form button{
+
+width:100%;
+
+}
+
+
+
+.form a{
+
+color:#ff1744;
 
 }
