@@ -1,5 +1,6 @@
 function register(){
 
+
 let username =
 document.getElementById("username").value;
 
@@ -12,34 +13,40 @@ let password =
 document.getElementById("password").value;
 
 
-if(!username || !email || !password){
+
+if(!username||!email||!password){
 
 alert("Fill all fields");
+
 return;
 
 }
 
 
-let user = {
-
-username:username,
-email:email,
-password:password
-
-};
-
 
 localStorage.setItem(
 "nexusUser",
-JSON.stringify(user)
+
+JSON.stringify({
+
+username,
+email,
+password
+
+})
+
 );
 
 
-alert("Account created!");
 
-window.location.href="../index.html";
+alert("Account created");
+
+
+location.href="../index.html";
+
 
 }
+
 
 
 
@@ -55,7 +62,7 @@ document.getElementById("password").value;
 
 
 
-let saved =
+let user =
 JSON.parse(
 localStorage.getItem("nexusUser")
 );
@@ -63,22 +70,16 @@ localStorage.getItem("nexusUser")
 
 
 if(
-saved &&
-saved.email==email &&
-saved.password==password
+user &&
+user.email==email &&
+user.password==password
 ){
 
 
-localStorage.setItem(
-"logged",
-"true"
-);
+alert("Welcome "+user.username);
 
 
-alert("Welcome "+saved.username);
-
-
-window.location.href="../index.html";
+location.href="../index.html";
 
 
 }
@@ -86,7 +87,7 @@ window.location.href="../index.html";
 else{
 
 
-alert("Wrong login");
+alert("Wrong email or password");
 
 }
 
