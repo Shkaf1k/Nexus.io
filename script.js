@@ -4,10 +4,8 @@ localStorage.getItem("nexusUser")
 );
 
 
-
 let account =
 document.getElementById("account");
-
 
 
 if(user){
@@ -19,7 +17,8 @@ account.innerHTML = `
 <div class="profile-menu">
 
 
-<img class="avatar"
+<img 
+class="avatar"
 src="${user.avatar}"
 >
 
@@ -28,6 +27,7 @@ src="${user.avatar}"
 
 
 ${user.username}
+
 
 
 <div class="dropdown">
@@ -59,5 +59,23 @@ Settings
 
 `;
 
+
+}
+else{
+
+
+account.innerHTML = `
+
+<a href="pages/login.html">
+Login
+</a>
+
+
+<a href="pages/register.html">
+Sign Up
+</a>
+
+
+`;
 
 }
