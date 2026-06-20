@@ -1,12 +1,17 @@
-let user =
-JSON.parse(
-localStorage.getItem("nexusUser")
+// Nexus.io account system
+
+
+let user = JSON.parse(
+    localStorage.getItem("nexusUser")
 );
 
 
-let account =
-document.getElementById("account");
 
+let account = document.getElementById("account");
+
+
+
+// если пользователь вошёл
 
 if(user){
 
@@ -21,6 +26,7 @@ account.innerHTML = `
 class="avatar"
 src="${user.avatar}"
 >
+
 
 
 <div class="user">
@@ -38,14 +44,23 @@ Profile
 </a>
 
 
+
 <a href="#">
 Upload Game
 </a>
 
 
+
 <a href="#">
 Settings
 </a>
+
+
+
+<a href="#" onclick="logout()">
+Logout
+</a>
+
 
 
 </div>
@@ -60,11 +75,18 @@ Settings
 `;
 
 
+
 }
+
+
+
+// если гость
+
 else{
 
 
 account.innerHTML = `
+
 
 <a href="pages/login.html">
 Login
@@ -77,5 +99,23 @@ Sign Up
 
 
 `;
+
+}
+
+
+
+
+// выход из аккаунта
+
+
+function logout(){
+
+
+localStorage.removeItem("nexusUser");
+
+
+
+window.location.href="index.html";
+
 
 }
