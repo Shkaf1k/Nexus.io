@@ -14,7 +14,7 @@ document.getElementById("password").value;
 
 
 
-if(!username||!email||!password){
+if(!username || !email || !password){
 
 alert("Fill all fields");
 
@@ -24,17 +24,23 @@ return;
 
 
 
+let user={
+
+username:username,
+
+email:email,
+
+password:password,
+
+avatar:"https://i.imgur.com/6VBx3io.png"
+
+};
+
+
+
 localStorage.setItem(
 "nexusUser",
-
-JSON.stringify({
-
-username,
-email,
-password
-
-})
-
+JSON.stringify(user)
 );
 
 
@@ -46,6 +52,7 @@ location.href="../index.html";
 
 
 }
+
 
 
 
@@ -73,10 +80,8 @@ if(
 user &&
 user.email==email &&
 user.password==password
+
 ){
-
-
-alert("Welcome "+user.username);
 
 
 location.href="../index.html";
@@ -87,7 +92,7 @@ location.href="../index.html";
 else{
 
 
-alert("Wrong email or password");
+alert("Wrong login");
 
 }
 
