@@ -20,17 +20,9 @@ N
 </div>
 
 
-<h1>
-Guest
+<h1 id="name">
+User
 </h1>
-
-
-<p>
-Developer
-</p>
-
-
-<hr>
 
 
 <h2>
@@ -48,6 +40,25 @@ Cyber World
 </div>
 
 
+<script>
+
+let u =
+JSON.parse(
+localStorage.getItem("nexusUser")
+);
+
+
+if(u){
+
+document.getElementById("name")
+.innerHTML=u.username;
+
+}
+
+</script>
+
+
 </body>
+
 
 </html>
