@@ -318,13 +318,11 @@ cursor:pointer;
 
 .dropdown{
 
-
 position:absolute;
-
 
 right:0;
 
-top:35px;
+top:45px;
 
 
 width:170px;
@@ -385,5 +383,11 @@ border-radius:10px;
 .user:hover .dropdown{
 
 display:block;
+
+}.user{
+
+position:relative;
+
+padding-bottom:20px;
 
 }
